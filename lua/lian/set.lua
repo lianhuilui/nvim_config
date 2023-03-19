@@ -49,7 +49,6 @@ kmap('n', "<leader>Q", function()
 end)
 
 -- exit insert mode
-kmap("i", "fj", "<esc>")
 kmap("i", "jf", "<esc>")
 
 -- quick search / replace
