@@ -34,7 +34,7 @@ kmap("n", "<leader>k", "<C-w>j")
 kmap("n", "<leader>i", "<C-w>k")
 
 -- split windows
-kmap("n", "<leader>v", "<C-w>v")
+kmap("n", "<leader>v", ":vnew<CR>")
 kmap("n", "<leader>h", "<C-w>n")
 
 -- write file
