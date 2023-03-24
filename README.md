@@ -18,3 +18,4 @@
 * clone this repo into ~/.config/nvim
 * install packer: https://github.com/wbthomason/packer.nvim#requirements
 * run `:PackerSync`
+* install a nerd font
