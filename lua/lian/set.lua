@@ -6,6 +6,11 @@ opt.expandtab=true
 opt.smartindent = true
 opt.number = true
 opt.relativenumber = true
+opt.splitbelow = true
+opt.splitright = true
+
+opt.ignorecase = true
+opt.smartcase = true
 
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
@@ -40,6 +45,9 @@ kmap("n", "<leader>h", "<C-w>n")
 -- write file
 kmap("n", "<leader>w", vim.cmd.w)
 
+-- hide nvim-tree
+kmap("n", "<leader>o", "<C-w>o")
+
 -- quit
 kmap("n", "<leader>q", vim.cmd.q)
 
@@ -51,11 +59,19 @@ end)
 -- exit insert mode
 kmap("i", "jf", "<esc>")
 
+-- exit insertmode and save file
+kmap("i", "jw", "<esc>:w<CR>")
+
 -- quick search / replace
 kmap("n", "<leader>s", ":%s/")
 
--- enter
+-- insert newline in insert mode
 kmap('i', "jj", "<CR>")
+
+-- reload config
+kmap('n', "<leader>c", ":source $MYVIMRC<CR>")
+
+-- press enter in commandline mode
 kmap('c', "<leader><leader>", "<CR>")
 
 -- colon
@@ -63,3 +79,13 @@ kmap('n', "<leader>;", ":")
 
 -- format file and return to position
 kmap('n', "<F7>", "magg=G'a")
+
+-- Map a shortcut to open the picker.
+vim.api.nvim_set_keymap("n", "<leader>r",
+    [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]],
+    {noremap = true, silent = true})
+
+-- inline errors and warnings
+vim.diagnostic.config({
+    virtual_text = true
+})
