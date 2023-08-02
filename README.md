@@ -28,8 +28,10 @@ note: I'm not sure if installing llvm and setting the compiler to clang solved u
 
 ## Mac instructions
 
+* use a modern term like iterm2
 * clone this repo into ~/.config/nvim
 * install packer: https://github.com/wbthomason/packer.nvim#requirements
+* * install neovim
 * run `:PackerSync`
 * install and apply a nerd font
 * install ripgrep
